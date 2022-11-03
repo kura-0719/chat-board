@@ -1,3 +1,4 @@
+import styles from "src/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { db } from "src/components/firebase";
 
@@ -15,13 +16,14 @@ export function Board() {
   return (
     <div>
       {console.log(texts)}
-      <div className="txts">
-        {texts.map(({ id, text }) => (
-          <div key={text}>
+      <ol className="txts">
+        {texts.map(({ name, text }) => (
+          <li key={text}>
+            <p className={styles.name_box}>{name}：</p>
             <p>{text}</p>
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
   );
-};
+}

@@ -12,10 +12,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>掲示板</h1>
+        <div className={styles.content}>
+          <Board />
 
-        <Board />
-
-        <SendText />
+          <SendText />
+        </div>
       </main>
     </div>
   );
