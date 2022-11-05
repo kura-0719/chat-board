@@ -65,7 +65,7 @@ const SendText = () => {
   return (
     <div className={styles.form_container}>
       <form onSubmit={sendText}>
-        <div className="sendTxt">
+        <div className={styles.send_text}>
           <input
             className={styles.input_name}
             placeholder="名前"
