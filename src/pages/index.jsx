@@ -17,11 +17,6 @@ const Threads = [
     title: "掲示板1",
     description: "ii",
   },
-  {
-    href: "/thread",
-    title: "掲示板1",
-    description: "ii",
-  },
 ];
 
 export default function Home() {
