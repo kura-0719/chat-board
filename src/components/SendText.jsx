@@ -5,17 +5,17 @@ import firebase from "firebase/compat/app";
 
 const SendText = () => {
   const handleNameChange = useCallback((e) => {
-    // if (e.target.value.length < 1) {
-    //   alert("5文字以内にしてください");
-    //   return;
-    // }
+    if (e.target.value.length < 1) {
+      alert("テキストを入れてください");
+      return;
+    }
     setName(e.target.value.trim());
   }, []);
   const handleTextChange = useCallback((e) => {
-    // if (e.target.value === "") {
-    //   alert("テキストを入れてください");
-    //   return;
-    // }
+    if (e.target.value === "") {
+      alert("テキストを入れてください");
+      return;
+    }
     setText(e.target.value.trim());
   }, []);
   const [inputName, setName] = useState("");
@@ -34,15 +34,15 @@ const SendText = () => {
   }
 
   // const [nameError, setNameError] = useState([]);
-  // const [textError, setTextAreaError] = useState([]);
+  // const [textError, setTextError] = useState([]);
   // const formVailed = () => {
   //   if (inputName.length === 0 && inputText.length !== 0) {
   //     setNameError({
   //       errorMessage: "※未入力エラーです。",
   //     });
-  //     setTextAreaError([]);
+  //     setTextError([]);
   //   } else if (inputName.length !== 0 && inputText.length === 0) {
-  //     setTextAreaError({
+  //     setTextError({
   //       errorMessage: "※未入力エラーです。",
   //     });
   //     setNameError([]);
@@ -50,7 +50,7 @@ const SendText = () => {
   //     setNameError({
   //       errorMessage: "※未入力エラーです。",
   //     });
-  //     setTextAreaError({
+  //     setTextError({
   //       errorMessage: "※未入力エラーです。",
   //     });
   //     return false;
@@ -73,6 +73,7 @@ const SendText = () => {
             onChange={handleNameChange}
             value={inputName}
           />
+          {/* {nameError && <span id="errorMessage">{nameError.errorMessage}</span>} */}
           <input
             className={styles.input_text}
             placeholder="コメントする"
@@ -80,6 +81,7 @@ const SendText = () => {
             onChange={handleTextChange}
             value={inputText}
           />
+          {/* {textError && <span id="errorMessage">{textError.errorMessage}</span>} */}
           <button>投稿</button>
         </div>
       </form>
