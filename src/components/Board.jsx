@@ -17,7 +17,7 @@ export function Board() {
     <div>
       {console.log(texts)}
       <ol className="txts">
-        {texts.map(({ index ,name, text }) => (
+        {texts.map(({ index, name, text }) => (
           <li key={index}>
             <p className={styles.name_box}>{name}：</p>
             <p>{text}</p>
