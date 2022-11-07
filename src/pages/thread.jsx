@@ -60,8 +60,8 @@ export default function Home() {
           <div>
             {console.log(texts)}
             <ol className="txts">
-              {texts.map(({ index, name, text }) => (
-                <li key={index}>
+              {texts.map(({ name, text }) => (
+                <li key={name}>
                   <p className={styles.nameBox}>{name}：</p>
                   <p>{text}</p>
                 </li>
