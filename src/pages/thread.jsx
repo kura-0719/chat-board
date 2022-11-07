@@ -1,7 +1,9 @@
 import Head from "next/head";
 import styles from "src/styles/Home.module.css";
 // import { Board } from "src/components/Board";
-import SendText from "src/components/SendText";
+// import SendText from "src/components/SendText";
+
+import firebase from "firebase/compat/app";
 
 import { useCallback, useEffect, useState } from "react";
 import { db } from "src/components/firebase";
@@ -18,17 +20,17 @@ export default function Home() {
   }, []);
 
   const handleNameChange = useCallback((e) => {
-    if (e.target.value.length < 1) {
-      alert("テキストを入れてください");
-      return;
-    }
+    // if (e.target.value.length < 1) {
+    //   alert("テキストを入れてください");
+    //   return;
+    // }
     setName(e.target.value.trim());
   }, []);
   const handleTextChange = useCallback((e) => {
-    if (e.target.value === "") {
-      alert("テキストを入れてください");
-      return;
-    }
+    // if (e.target.value === "") {
+    //   alert("テキストを入れてください");
+    //   return;
+    // }
     setText(e.target.value.trim());
   }, []);
   const [inputName, setName] = useState("");

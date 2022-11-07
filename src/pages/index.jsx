@@ -9,7 +9,7 @@ const Threads = [
     description: "テスト用掲示板",
   },
   {
-    href: "/hobby",
+    href: "/club",
     title: "おしゃべり",
     description: "なんでもはなして",
   },
