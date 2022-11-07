@@ -26,11 +26,11 @@
   height: 100%;
 }
 
-.card_wrap {
+.cardWrap {
   width: 45%;
 }
 
-.card_content {
+.cardContent {
   width: 100%;
   display: block;
   background-color: #fff;
@@ -38,13 +38,13 @@
   box-shadow: 0 2px 5px #ccc;
 }
 
-.card_content:hover {
+.cardContent:hover {
   transform: translateY(-3px);
   box-shadow: 0 7px 34px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
   transition: all .5s;
 }
 
-.card_title {
+.cardTitle {
   font-size: 1.6em;
   padding-left: 1em;
   padding-top: .5em;
@@ -52,14 +52,14 @@
   font-weight: 700;
 }
 
-.card_txt {
+.cardTxt {
   color: #777;
   font-size: 20px;
   padding-left: 1em;
   padding-bottom: 1em;
 }
 
-.thread_wrap {
+.threadWrap {
   width: 80%;
   margin: 0 auto 120px;
   background-color: #F1F1F1;
@@ -67,16 +67,16 @@
   height: 100%;
 }
 
-.send_text {
+.sendText {
  margin: 0 auto;
  width: 90%;
 }
 
-.form_container {
+.formContainer {
   margin-top: 80px;
 }
 
-.input_name {
+.inputName {
   display: block;
   width: 8em;
   height: 2em;
@@ -88,13 +88,13 @@
   -moz-appearance: none;
 }
 
-.name_box {
+.nameBox {
   display: flex;
   color: #008000;
   font-weight: bold;
 }
 
-.input_text {
+.inputText {
   display: block;
   width: 100%;
   height: 8em;
@@ -107,8 +107,8 @@
   -moz-appearance: none;
 }
 
-.input_name:focus,
-.input_text:focus {
+.inputName:focus,
+.inputText:focus {
   outline: 0;
   box-shadow: 0 0 0 2px #0070f3 inset;
 }
@@ -118,7 +118,7 @@
     width: 90%;
     display: block;
   }
-  .card_wrap {
+  .cardWrap {
     width: 80%;
     margin: 0 auto;
   }

@@ -2,18 +2,19 @@ import Head from "next/head";
 import styles from "src/styles/Home.module.css";
 // import { Board } from "src/components/Board";
 import SendText from "src/components/SendText";
+import firebase from "firebase/compat/app";
 
 import { useCallback, useEffect, useState } from "react";
 import { db } from "src/components/firebase";
 
 export default function Home() {
-  const [texts, setTexts] = useState([]);
+  const [hobby, setHobby] = useState([]);
   useEffect(() => {
-    db.collection("texts")
+    db.collection("hobby")
       .orderBy("createdAt")
       .limit(50)
       .onSnapshot((snapshot) => {
-        setTexts(snapshot.docs.map((doc) => doc.data()));
+        setHobby(snapshot.docs.map((doc) => doc.data()));
       });
   }, []);
 
@@ -29,14 +30,14 @@ export default function Home() {
       alert("テキストを入れてください");
       return;
     }
-    setText(e.target.value.trim());
+    setHobby(e.target.value.trim());
   }, []);
   const [inputName, setName] = useState("");
   const [inputText, setText] = useState("");
   function sendText(e) {
     e.preventDefault();
 
-    db.collection("texts").add({
+    db.collection("hobby").add({
       name: inputName,
       text: inputText,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -56,9 +57,9 @@ export default function Home() {
         <h1 className={styles.title}>掲示板</h1>
         <div className={styles.threadWrap}>
           <div>
-            {console.log(texts)}
+            {console.log(hobby)}
             <ol className="txts">
-              {texts.map(({ index, name, text }) => (
+              {hobby.map(({ index, name, text }) => (
                 <li key={index}>
                   <p className={styles.nameBox}>{name}：</p>
                   <p>{text}</p>

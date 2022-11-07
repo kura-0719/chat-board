@@ -4,14 +4,14 @@ import Link from "next/link";
 
 const Threads = [
   {
-    href: "/",
-    title: "目次",
-    description: "aa",
+    href: "/thread",
+    title: "テスト",
+    description: "テスト用掲示板",
   },
   {
-    href: "/thread",
-    title: "掲示板1",
-    description: "ii",
+    href: "/hobby",
+    title: "おしゃべり",
+    description: "なんでもはなして",
   },
 ];
 
@@ -27,14 +27,10 @@ export default function Home() {
         <div className={styles.content}>
           {Threads.map((Threads) => {
             return (
-              <div className={styles.card_wrap}>
-                <Link
-                  key={Threads.href}
-                  href={Threads.href}
-                  className={styles.card_content}
-                >
-                  <p key={Threads.title} className={styles.card_title}>{Threads.title}</p>
-                  <p key={Threads.description} className={styles.card_txt}>{Threads.description}</p>
+              <div key={Threads.href} className={styles.cardWrap}>
+                <Link href={Threads.href} className={styles.cardContent}>
+                  <p className={styles.cardTitle}>{Threads.title}</p>
+                  <p className={styles.cardTxt}>{Threads.description}</p>
                 </Link>
               </div>
             );
